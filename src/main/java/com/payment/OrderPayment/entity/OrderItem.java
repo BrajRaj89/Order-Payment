@@ -16,50 +16,44 @@ public class OrderItem
     @JoinColumn(name = "order_id")
     @com.fasterxml.jackson.annotation.JsonIgnore
     private Order order;
-
-    public OrderItem()
+    public void setId(Long id)
     {
-    }
-    public OrderItem(Object o, String name, Double price, Integer quantity, Object o1) {
-    }
-
-    public void setId(Long id) {
         this.id = id;
     }
-
-    public Long getId() {
+    public Long getId()
+    {
         return id;
     }
-
-    public void setOrder(Order order) {
+    public void setOrder(Order order)
+    {
         this.order = order;
     }
-
-    public Order getOrder() {
+    public Order getOrder()
+    {
         return order;
     }
-
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
-
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
-
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(Integer quantity)
+    {
         this.quantity = quantity;
     }
-
-    public Integer getQuantity() {
+    public Integer getQuantity()
+    {
         return quantity;
     }
-
-    public void setPrice(Double price) {
+    public void setPrice(Double price)
+    {
         this.price = price;
     }
-
-    public Double getPrice() {
+    public Double getPrice()
+    {
         return price;
     }
 }

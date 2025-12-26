@@ -7,7 +7,8 @@ import com.payment.OrderPayment.repository.PaymentRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PaymentService {
+public class PaymentService
+{
 
     private PaymentRepository paymentRepo;
     private OrderRepository orderRepo;
@@ -16,21 +17,17 @@ public class PaymentService {
         this.paymentRepo = paymentRepo;
         this.orderRepo = orderRepo;
     }
-    public Payment makePayment(Long orderId, Double amount) {
-        Order order = orderRepo.findById(orderId)
-                .orElseThrow(() -> new RuntimeException("Order not found"));
+    public Payment makePayment(Long orderId, Double amount)
+    {
+        Order order = orderRepo.findById(orderId).orElseThrow(() -> new RuntimeException("Order not found"));
 
-        if (paymentRepo.existsByOrder(order))
-            throw new RuntimeException("Payment already exists for this order");
-
+        if (paymentRepo.existsByOrder(order)) throw new RuntimeException("Payment already exists for this order");
         Payment payment = new Payment();
         payment.setOrder(order);
         payment.setAmount(amount);
         payment.setStatus("SUCCESS");
-
         order.setStatus("PAID");
         orderRepo.save(order);
-
         return paymentRepo.save(payment);
     }
 }

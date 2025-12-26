@@ -9,14 +9,16 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/auth")
-public class AuthController {
+public class AuthController
+{
     private final UserRepository userRepo;
     AuthController(UserRepository userRepo)
     {
         this.userRepo = userRepo;
     }
     @PostMapping("/register")
-    public Map<String, Object> register(@RequestBody User user) {
+    public Map<String, Object> register(@RequestBody User user)
+    {
         userRepo.save(user);
         return Map.of("success", true, "message", "User registered successfully");
     }

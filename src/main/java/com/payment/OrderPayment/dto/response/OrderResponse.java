@@ -6,27 +6,28 @@ public class OrderResponse
     private String status;
     private Double amount;
 
-    public void setOrderId(Long orderId) {
+    public void setOrderId(Long orderId)
+    {
         this.orderId = orderId;
     }
-
-    public Long getOrderId() {
+    public Long getOrderId()
+    {
         return orderId;
     }
-
-    public void setAmount(Double amount) {
+    public void setAmount(Double amount)
+    {
         this.amount = amount;
     }
-
-    public Double getAmount() {
+    public Double getAmount()
+    {
         return amount;
     }
-
-    public void setStatus(String status) {
+    public void setStatus(String status)
+    {
         this.status = status;
     }
-
-    public String getStatus() {
+    public String getStatus()
+    {
         return status;
     }
 }

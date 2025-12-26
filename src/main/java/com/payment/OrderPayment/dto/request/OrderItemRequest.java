@@ -1,31 +1,33 @@
 package com.payment.OrderPayment.dto.request;
-public class OrderItemRequest {
+public class OrderItemRequest
+{
 
     private String name;
     private Double price;
     private Integer quantity;
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(Integer quantity)
+    {
         this.quantity = quantity;
     }
-
-    public Integer getQuantity() {
+    public Integer getQuantity()
+    {
         return quantity;
     }
-
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
-
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
-
-    public void setPrice(Double price) {
+    public void setPrice(Double price)
+    {
         this.price = price;
     }
-
-    public Double getPrice() {
+    public Double getPrice()
+    {
         return price;
     }
 }
